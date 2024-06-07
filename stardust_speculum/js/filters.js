@@ -15,17 +15,34 @@ function addFilter(filter) {
 
 function updateSelectedFiltersDisplay(filterNames) {
     const selectedFiltersDiv = document.getElementById('selectedFilters');
-    selectedFiltersDiv.innerHTML = '';
-    selectedFilters.forEach(filter => {
-        const filterSpan = document.createElement('span');
-        filterSpan.textContent = filterNames[filter];
-        filterSpan.classList.add('filter-span');
-        filterSpan.onclick = () => removeFilter(filter, filterNames);
-        selectedFiltersDiv.appendChild(filterSpan);
-    });
+    selectedFiltersDiv.innerHTML = ''; // Clear previous filters
+
+    if (selectedFilters.length > 0) {
+        const filterTextElement = document.createElement('span');
+        filterTextElement.textContent = 'Filtrar por: ';
+        selectedFiltersDiv.appendChild(filterTextElement);
+
+        selectedFilters.forEach(filter => {
+            const filterTag = document.createElement('span');
+            filterTag.classList.add('filter-tag');
+            filterTag.textContent = filterNames[filter];
+            const removeIcon = document.createElement('span');
+            removeIcon.textContent = '✖'; // Close icon
+            removeIcon.onclick = () => removeFilter(filter, filterNames);
+            filterTag.appendChild(removeIcon);
+            selectedFiltersDiv.appendChild(filterTag);
+        });
+    }
 }
 
 function removeFilter(filter, filterNames) {
     selectedFilters = selectedFilters.filter(f => f !== filter);
     updateSelectedFiltersDisplay(filterNames);
+}
+
+function resetFilters() {
+    document.getElementById('searchInput').value = '';
+    selectedFilters = [];
+    updateSelectedFiltersDisplay({});
+    document.getElementById('results').innerHTML = ''; // Clear results
 }

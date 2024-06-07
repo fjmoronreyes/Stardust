@@ -1,3 +1,13 @@
+/* General Button Styles */
+button {
+    font-family: 'Dancing Script', cursive;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Filter Button */
 button.filter-button {
     display: flex;
     align-items: center;
@@ -7,10 +17,6 @@ button.filter-button {
     height: 60px;
     background-color: #cab86f;
     color: white;
-    border: none;
-    border-radius: 5px 0 0 5px; /* Left rounded corners */
-    cursor: pointer;
-    font-family: 'Dancing Script', cursive;
     margin-right: -1px; /* To overlap slightly with the input */
 }
 
@@ -19,6 +25,7 @@ button.filter-button img {
     height: 100%;
 }
 
+/* Search Button */
 button.search-button {
     display: flex;
     align-items: center;
@@ -28,10 +35,7 @@ button.search-button {
     height: 60px;
     background-color: #cab86f;
     color: white;
-    border: none;
     border-radius: 0 5px 5px 0; /* Right rounded corners */
-    cursor: pointer;
-    font-family: 'Dancing Script', cursive;
 }
 
 button.search-button img {
@@ -39,15 +43,12 @@ button.search-button img {
     height: 100%;
 }
 
+/* Action Button */
 button.action-button {
     padding: 10px 20px;
     font-size: 20px;
     background-color: #cab86f;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Dancing Script', cursive;
     margin-top: 20px; /* To separate from the search group */
 }
 
@@ -55,6 +56,7 @@ button.action-button:hover {
     background-color: #b8955d;
 }
 
+/* View Buttons */
 .view-buttons {
     display: flex;
     justify-content: center;
@@ -66,10 +68,6 @@ button.view-button {
     font-size: 20px;
     background-color: #cab86f;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Dancing Script', cursive;
     margin: 0 10px;
 }
 
@@ -81,21 +79,35 @@ button.view-button:hover {
     background-color: #b8955d;
 }
 
+/* Filter Tags */
+.filter-tag {
+    display: inline-block;
+    background-color: #cab86f;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.filter-tag span {
+    margin-left: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Scroll to Top Button */
 #scrollToTopBtn {
     display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 99;
-    border: none;
-    outline: none;
     background-color: #cab86f;
     color: #1B263B;
     padding: 15px;
     border-radius: 50%;
     font-size: 18px;
-    font-family: 'Dancing Script', cursive;
-    cursor: pointer;
 }
 
 #scrollToTopBtn:hover {

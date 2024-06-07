@@ -1,7 +1,7 @@
 function searchBooks() {
     const query = document.getElementById('searchInput').value;
 
-    if (!query) {
+    if (!query && selectedFilters.length === 0) {
         const searchInput = document.getElementById('searchInput');
         searchInput.style.border = '2px solid #cab86f';
         setTimeout(() => {
@@ -32,11 +32,4 @@ function searchBooks() {
         .catch(error => {
             console.error('Error fetching books:', error);
         });
-}
-
-function resetFilters() {
-    document.getElementById('searchInput').value = '';
-    selectedFilters = [];
-    updateSelectedFiltersDisplay({});
-    document.getElementById('results').innerHTML = ''; // Clear results
 }
