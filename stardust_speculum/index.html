@@ -9,22 +9,25 @@
 <body>
     <h1>STARDUST</h1>
     <div class="container">
-        <input type="text" id="searchInput" placeholder="Buscar...">
-        <div id="selectedFilters" class="selected-filters"></div>
-        <div class="button-group">
+        <div class="input-group">
             <div class="dropdown">
-                <button class="dropbtn" onclick="toggleDropdown()">Añadir Filtro</button>
+                <button class="dropbtn" onclick="toggleDropdown()">Filtros</button>
                 <div id="dropdownContent" class="dropdown-content">
                     <a href="#" onclick="addFilter('title')">Título</a>
                     <a href="#" onclick="addFilter('author')">Autor</a>
                     <a href="#" onclick="addFilter('editorial')">Editorial</a>
                 </div>
             </div>
+            <input type="text" id="searchInput" placeholder="Buscar...">
+        </div>
+        <div id="selectedFilters" class="selected-filters"></div>
+        <div class="button-group">
             <button onclick="searchBooks()">Buscar</button>
             <button onclick="resetFilters()">Limpiar Búsqueda</button>
         </div>
         <div id="results" class="results"></div>
     </div>
+    <button id="scrollToTopBtn" onclick="scrollToTop()">&uarr;</button>
     <script src="script.js"></script>
 </body>
 </html>
