@@ -1,8 +1,10 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, HTTPException, Query
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
-from utils import get_database_url
+from .utils import get_database_url
+from fastapi.middleware.cors import CORSMiddleware
+
 
 DATABASE_URL = get_database_url()
 
@@ -31,6 +33,14 @@ class Book(Base):
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Permitir todas las orígenes, puedes especificar un dominio específico
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 Base.metadata.create_all(bind=engine)
 
 def get_db():
@@ -41,5 +51,7 @@ def get_db():
         db.close()
 
 @app.get("/books/")
-def read_books(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+def read_books(author: str = Query(None), skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    if author:
+        return db.query(Book).filter(Book.autor.contains(author)).offset(skip).limit(limit).all()
     return db.query(Book).offset(skip).limit(limit).all()
