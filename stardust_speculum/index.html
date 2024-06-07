@@ -19,11 +19,12 @@
                 </div>
             </div>
             <input type="text" id="searchInput" placeholder="Buscar...">
-            <button class="search-button" onclick="searchBooks()">🔍</button>
+            <button class="search-button" onclick="searchBooks()">
+                <img src="./images/star_nobg.png" alt="Buscar" style="height: 60px;">
+            </button>
         </div>
         <div id="selectedFilters" class="selected-filters"></div>
         <div class="button-group">
-            <button class="action-button" onclick="searchBooks()">Buscar</button>
             <button class="action-button" onclick="resetFilters()">Limpiar Búsqueda</button>
         </div>
         <div id="results" class="results"></div>
