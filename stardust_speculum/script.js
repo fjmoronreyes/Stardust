@@ -1,6 +1,35 @@
+let currentFilter = 'title';
+
+function setFilter(filter) {
+    currentFilter = filter;
+    const filterTitle = document.getElementById('filter-title');
+    const searchInput = document.getElementById('searchInput');
+    switch (filter) {
+        case 'author':
+            filterTitle.innerText = 'Filtrar por Autor';
+            searchInput.placeholder = 'Nombre del Autor';
+            break;
+        case 'editorial':
+            filterTitle.innerText = 'Filtrar por Editorial';
+            searchInput.placeholder = 'Nombre de la Editorial';
+            break;
+        default:
+            filterTitle.innerText = 'Filtrar por Título';
+            searchInput.placeholder = 'Título del Libro';
+            break;
+    }
+}
+
 function searchBooks() {
-    const author = document.getElementById('authorInput').value;
-    const url = `http://127.0.0.1:8000/books/?author=${encodeURIComponent(author)}`;
+    const query = document.getElementById('searchInput').value;
+    let url = `http://127.0.0.1:8000/books/?title=${encodeURIComponent(query)}`;
+    
+    if (currentFilter === 'author') {
+        url = `http://127.0.0.1:8000/books/author/?author=${encodeURIComponent(query)}`;
+    } else if (currentFilter === 'editorial') {
+        url = `http://127.0.0.1:8000/books/editorial/?editorial=${encodeURIComponent(query)}`;
+    }
+    
     console.log(`Fetching books from URL: ${url}`);
     
     fetch(url)

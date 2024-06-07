@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtrar por Autor</title>
+    <title>Filtrar por Título</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <h1>STARDUST</h1>
     <div class="container">
-        <h2>Filtrar por Autor</h2>
-        <input type="text" id="authorInput" placeholder="Nombre del Autor">
+        <h2 id="filter-title">Filtrar por Título</h2>
+        <input type="text" id="searchInput" placeholder="Título del Libro">
         <button onclick="searchBooks()">Buscar</button>
         <div id="results" class="results"></div>
+        <div class="filter-buttons">
+            <button onclick="setFilter('title')">Título</button>
+            <button onclick="setFilter('author')">Autor</button>
+            <button onclick="setFilter('editorial')">Editorial</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
