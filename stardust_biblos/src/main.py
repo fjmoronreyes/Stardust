@@ -2,8 +2,9 @@ from fastapi import FastAPI, Depends
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
+from utils import get_database_url
 
-DATABASE_URL = "sqlite:///./backend/biblioteca.db"
+DATABASE_URL = get_database_url()
 
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
