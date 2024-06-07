@@ -8,8 +8,8 @@
 </head>
 <body>
     <h1>STARDUST</h1>
-    <div class="container">
-        <div class="input-group">
+    <div class="search-container">
+        <div class="search-bar">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown()">Filtros</button>
                 <div id="dropdownContent" class="dropdown-content">
@@ -19,15 +19,16 @@
                 </div>
             </div>
             <input type="text" id="searchInput" placeholder="Buscar...">
+            <button class="search-btn" onclick="searchBooks()"><i class="fas fa-book"></i></button>
         </div>
         <div id="selectedFilters" class="selected-filters"></div>
         <div class="button-group">
             <button onclick="searchBooks()">Buscar</button>
             <button onclick="resetFilters()">Limpiar Búsqueda</button>
         </div>
-        <div id="results" class="results"></div>
     </div>
-    <button id="scrollToTopBtn" onclick="scrollToTop()">&uarr;</button>
+    <div id="results" class="results"></div>
+    <button class="scroll-to-top" onclick="scrollToTop()">&#11014;</button>
     <script src="script.js"></script>
 </body>
 </html>

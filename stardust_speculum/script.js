@@ -97,16 +97,14 @@ function toggleDropdown() {
     dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
 }
 
-window.onscroll = function() { scrollFunction(); };
-
-function scrollFunction() {
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+window.onscroll = function() {
+    const scrollBtn = document.querySelector('.scroll-to-top');
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopBtn.style.display = "block";
+        scrollBtn.style.display = 'block';
     } else {
-        scrollToTopBtn.style.display = "none";
+        scrollBtn.style.display = 'none';
     }
-}
+};
 
 function scrollToTop() {
     document.body.scrollTop = 0;
