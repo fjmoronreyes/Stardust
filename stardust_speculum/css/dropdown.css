@@ -1,26 +1,12 @@
 .dropdown {
     position: relative;
     display: inline-block;
-    margin-right: -1px;
-    height: 48px;
-}
-
-.dropbtn {
-    background-color: #2E4053;
-    color: #FFEEAA;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    cursor: pointer;
-    font-family: 'Dancing Script', cursive;
-    border-right: none;
-    height: 100%;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
+    left: 0; /* Align to the left edge of the dropdown button */
     background-color: rgba(203, 175, 99, 0.8);
     min-width: 160px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
