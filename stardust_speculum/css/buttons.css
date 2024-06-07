@@ -55,6 +55,32 @@ button.action-button:hover {
     background-color: #b8955d;
 }
 
+.view-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button.view-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #cab86f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Dancing Script', cursive;
+    margin: 0 10px;
+}
+
+button.view-button.active {
+    background-color: #b8955d;
+}
+
+button.view-button:hover {
+    background-color: #b8955d;
+}
+
 #scrollToTopBtn {
     display: none;
     position: fixed;

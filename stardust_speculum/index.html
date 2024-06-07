@@ -34,6 +34,10 @@
         <div class="button-group">
             <button class="action-button" onclick="resetFilters()">Limpiar Búsqueda</button>
         </div>
+        <div class="view-buttons">
+            <button class="view-button" id="simple-view" onclick="setViewMode('simple')">Información Simple</button>
+            <button class="view-button" id="complete-view" onclick="setViewMode('complete')">Información Completa</button>
+        </div>
         <div id="results" class="results"></div>
     </div>
     <button id="scrollToTopBtn" onclick="scrollToTop()">
@@ -47,5 +51,6 @@
     <script src="js/dropdown.js"></script>
     <script src="js/scroll.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/viewMode.js"></script> <!-- Add new script -->
 </body>
 </html>
