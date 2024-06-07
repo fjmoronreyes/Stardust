@@ -97,16 +97,25 @@ function toggleDropdown() {
     dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
 }
 
-window.onscroll = function() {
-    const scrollBtn = document.querySelector('.scroll-to-top');
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollBtn.style.display = 'block';
-    } else {
-        scrollBtn.style.display = 'none';
-    }
-};
+function displayFilters() {
+    const dropdownContent = document.getElementById('dropdownContent');
+    dropdownContent.style.display = 'block';
+}
+
+function hideFilters() {
+    const dropdownContent = document.getElementById('dropdownContent');
+    dropdownContent.style.display = 'none';
+}
 
 function scrollToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+window.onscroll = function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = 'block';
+    } else {
+        scrollToTopBtn.style.display = 'none';
+    }
+};

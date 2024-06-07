@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 body {
     background-color: #1B263B;
@@ -18,7 +17,7 @@ h1 {
     color: #FFEEAA;
 }
 
-.search-container {
+.container {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -30,25 +29,27 @@ h1 {
     align-items: center;
 }
 
-.search-bar {
+.search-group {
     display: flex;
     width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 input[type="text"] {
-    flex: 1;
-    padding: 15px;
-    font-size: 18px;
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px 0 0 5px;
-    text-align: left;
+    text-align: center;
     background-color: #2E4053;
     color: #FFEEAA;
-    font-family: 'Dancing Script', cursive;
+    border-right: none;
 }
 
-.search-btn {
-    padding: 15px 20px;
+button.search-button {
+    padding: 10px 20px;
     font-size: 20px;
     background-color: #cab86f;
     color: white;
@@ -58,94 +59,32 @@ input[type="text"] {
     font-family: 'Dancing Script', cursive;
 }
 
-.search-btn i {
-    font-size: 24px;
-}
-
-.search-btn:hover {
+button.search-button:hover {
     background-color: #b8955d;
-}
-
-.button-group {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 10px;
-}
-
-button {
-    padding: 15px 25px;
-    font-size: 20px;
-    background-color: #cab86f;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    margin: 10px 5px;
-    font-family: 'Dancing Script', cursive;
-}
-
-button:hover {
-    background-color: #b8955d;
-}
-
-.selected-filters {
-    margin: 10px 0;
-}
-
-.filter-span {
-    display: inline-block;
-    background-color: #cab86f;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 25px;
-    margin: 5px;
-    cursor: pointer;
-    font-family: 'Dancing Script', cursive;
-}
-
-.results {
-    margin-top: 20px;
-}
-
-.results ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.results li {
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
 }
 
 .dropdown {
     position: relative;
     display: inline-block;
+    margin-right: -1px;
 }
 
 .dropbtn {
     background-color: #2E4053;
     color: #FFEEAA;
-    padding: 15px 20px;
-    font-size: 18px;
-    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
     border-radius: 5px 0 0 5px;
     cursor: pointer;
     font-family: 'Dancing Script', cursive;
-}
-
-.dropbtn:hover {
-    background-color: #1B263B;
+    border-right: none;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgba(255, 238, 170, 0.7);
+    background-color: rgba(203, 175, 99, 0.8);
     min-width: 160px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -170,23 +109,68 @@ button:hover {
     display: block;
 }
 
-.scroll-to-top {
+button.action-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #cab86f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Dancing Script', cursive;
+    margin: 10px 5px;
+}
+
+button.action-button:hover {
+    background-color: #b8955d;
+}
+
+.results {
+    margin-top: 20px;
+}
+
+.results ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.results li {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+#scrollToTopBtn {
     display: none;
     position: fixed;
     bottom: 20px;
-    right: 30px;
+    right: 20px;
     z-index: 99;
-    font-size: 18px;
     border: none;
     outline: none;
-    background-color: #cab86f;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFEEAA;
     cursor: pointer;
     padding: 15px;
     border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-family: 'Dancing Script', cursive;
 }
 
-.scroll-to-top:hover {
+#scrollToTopBtn:hover {
     background-color: #b8955d;
+}
+
+.scroll-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-icon span {
+    margin-left: 5px;
 }
