@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtrar por Título</title>
+    <title>STARDUST</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <h1>STARDUST</h1>
     <div class="container">
-        <h2 id="filter-title">Filtrar por Título</h2>
-        <input type="text" id="searchInput" placeholder="Título del Libro">
-        <button onclick="searchBooks()">Buscar</button>
-        <div id="results" class="results"></div>
-        <div class="filter-buttons">
-            <button onclick="setFilter('title')">Título</button>
-            <button onclick="setFilter('author')">Autor</button>
-            <button onclick="setFilter('editorial')">Editorial</button>
+        <input type="text" id="searchInput" placeholder="Buscar...">
+        <div id="selectedFilters" class="selected-filters"></div>
+        <div class="button-group">
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown()">Añadir Filtro</button>
+                <div id="dropdownContent" class="dropdown-content">
+                    <a href="#" onclick="addFilter('title')">Título</a>
+                    <a href="#" onclick="addFilter('author')">Autor</a>
+                    <a href="#" onclick="addFilter('editorial')">Editorial</a>
+                </div>
+            </div>
+            <button onclick="searchBooks()">Buscar</button>
+            <button onclick="resetFilters()">Limpiar Búsqueda</button>
         </div>
+        <div id="results" class="results"></div>
     </div>
     <script src="script.js"></script>
 </body>

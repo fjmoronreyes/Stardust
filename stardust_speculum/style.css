@@ -1,11 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 body {
-    background-image: url('./images/starry_night.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh; /* Cambiado de height a min-height */
+    background-color: #1B263B;
+    min-height: 100vh;
     margin: 0;
     font-size: 2em;
     font-family: 'Dancing Script', serif;
@@ -20,11 +17,6 @@ h1 {
     color: #FFEEAA;
 }
 
-h2 {
-    font-size: 2.5em;
-    color: #FFEEAA;
-}
-
 .container {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -32,30 +24,61 @@ h2 {
     max-width: 600px;
     margin: 50px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 input[type="text"] {
-    width: calc(100% - 80px);
+    width: calc(100% - 20px);
     padding: 10px;
     font-size: 16px;
-    margin-right: 10px;
+    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;
+    display: block;
+    margin: 10px auto;
+    background-color: #2E4053;
+    color: #FFEEAA;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 15px 25px;
+    font-size: 20px;
     background-color: #cab86f;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
+    margin: 10px 5px;
+    font-family: 'Dancing Script', cursive;
 }
 
 button:hover {
+    background-color: #b8955d;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.selected-filters {
+    margin: 10px 0;
+}
+
+.filter-span {
+    display: inline-block;
     background-color: #cab86f;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 25px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: 'Dancing Script', cursive;
 }
 
 .results {
@@ -76,11 +99,51 @@ button:hover {
     font-weight: bold;
 }
 
-footer {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 10px 5px;
+}
+
+.dropbtn {
+    background-color: #cab86f;
+    color: white;
+    padding: 15px 25px;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Dancing Script', cursive;
+}
+
+.dropbtn:hover {
+    background-color: #b8955d;
+}
+
+.dropdown-content {
+    display: none;
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+    background-color: #cab86f;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    font-family: 'Dancing Script', cursive;
+    color: white;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+}
+
+.dropdown-content a:hover {
+    background-color: #b8955d;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

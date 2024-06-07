@@ -1,24 +1,34 @@
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
+from sqlalchemy import or_
 from .schemas import Book
 from .database import get_db
 
 router = APIRouter()
 
 @router.get("/books/")
-def read_books_by_title(title: str = Query(None), skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+def search_books(query: str = Query(None), db: Session = Depends(get_db)):
+    if not query:
+        return []
+    return db.query(Book).filter(
+        or_(
+            Book.titulo.contains(query),
+            Book.autor.contains(query),
+            Book.editorial.contains(query)
+        )
+    ).all()
+
+@router.get("/books/filter/")
+def search_books_with_filters(title: str = Query(None), author: str = Query(None), editorial: str = Query(None), db: Session = Depends(get_db)):
+    query_filters = []
     if title:
-        return db.query(Book).filter(Book.titulo.contains(title)).offset(skip).limit(limit).all()
-    return db.query(Book).offset(skip).limit(limit).all()
-
-@router.get("/books/author/")
-def read_books_by_author(author: str = Query(None), skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+        query_filters.append(Book.titulo.contains(title))
     if author:
-        return db.query(Book).filter(Book.autor.contains(author)).offset(skip).limit(limit).all()
-    return db.query(Book).offset(skip).limit(limit).all()
-
-@router.get("/books/editorial/")
-def read_books_by_editorial(editorial: str = Query(None), skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+        query_filters.append(Book.autor.contains(author))
     if editorial:
-        return db.query(Book).filter(Book.editorial.contains(editorial)).offset(skip).limit(limit).all()
-    return db.query(Book).offset(skip).limit(limit).all()
+        query_filters.append(Book.editorial.contains(editorial))
+    
+    if not query_filters:
+        return []
+    
+    return db.query(Book).filter(or_(*query_filters)).all()

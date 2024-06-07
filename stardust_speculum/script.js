@@ -1,37 +1,56 @@
-let currentFilter = 'title';
+let selectedFilters = [];
 
-function setFilter(filter) {
-    currentFilter = filter;
-    const filterTitle = document.getElementById('filter-title');
-    const searchInput = document.getElementById('searchInput');
-    switch (filter) {
-        case 'author':
-            filterTitle.innerText = 'Filtrar por Autor';
-            searchInput.placeholder = 'Nombre del Autor';
-            break;
-        case 'editorial':
-            filterTitle.innerText = 'Filtrar por Editorial';
-            searchInput.placeholder = 'Nombre de la Editorial';
-            break;
-        default:
-            filterTitle.innerText = 'Filtrar por Título';
-            searchInput.placeholder = 'Título del Libro';
-            break;
+function addFilter(filter) {
+    const filterNames = {
+        'title': 'Título',
+        'author': 'Autor',
+        'editorial': 'Editorial'
+    };
+
+    if (!selectedFilters.includes(filter)) {
+        selectedFilters.push(filter);
+        updateSelectedFiltersDisplay(filterNames);
     }
+}
+
+function updateSelectedFiltersDisplay(filterNames) {
+    const selectedFiltersDiv = document.getElementById('selectedFilters');
+    selectedFiltersDiv.innerHTML = '';
+    selectedFilters.forEach(filter => {
+        const filterSpan = document.createElement('span');
+        filterSpan.textContent = filterNames[filter];
+        filterSpan.classList.add('filter-span');
+        filterSpan.onclick = () => removeFilter(filter, filterNames);
+        selectedFiltersDiv.appendChild(filterSpan);
+    });
+}
+
+function removeFilter(filter, filterNames) {
+    selectedFilters = selectedFilters.filter(f => f !== filter);
+    updateSelectedFiltersDisplay(filterNames);
 }
 
 function searchBooks() {
     const query = document.getElementById('searchInput').value;
-    let url = `http://127.0.0.1:8000/books/?title=${encodeURIComponent(query)}`;
-    
-    if (currentFilter === 'author') {
-        url = `http://127.0.0.1:8000/books/author/?author=${encodeURIComponent(query)}`;
-    } else if (currentFilter === 'editorial') {
-        url = `http://127.0.0.1:8000/books/editorial/?editorial=${encodeURIComponent(query)}`;
+
+    if (!query) {
+        const searchInput = document.getElementById('searchInput');
+        searchInput.style.border = '2px solid #cab86f';
+        setTimeout(() => {
+            searchInput.style.border = '';
+        }, 2000);
+        return;
     }
-    
+
+    let url = `http://127.0.0.1:8000/books/?query=${encodeURIComponent(query)}`;
+
+    if (selectedFilters.length > 0) {
+        const filters = selectedFilters.map(filter => `${filter}=${encodeURIComponent(query)}`).join('&');
+        url = `http://127.0.0.1:8000/books/filter/?${filters}`;
+    }
+
     console.log(`Fetching books from URL: ${url}`);
-    
+
     fetch(url)
         .then(response => {
             if (!response.ok) {
@@ -47,12 +66,19 @@ function searchBooks() {
         });
 }
 
+function resetFilters() {
+    document.getElementById('searchInput').value = '';
+    selectedFilters = [];
+    updateSelectedFiltersDisplay({});
+    document.getElementById('results').innerHTML = ''; // Clear results
+}
+
 function displayResults(books) {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';
 
     if (books.length === 0) {
-        resultsDiv.innerHTML = '<p>No books found.</p>';
+        resultsDiv.innerHTML = '<p>No hay resultados.</p>';
         return;
     }
 
@@ -64,4 +90,9 @@ function displayResults(books) {
     });
 
     resultsDiv.appendChild(list);
+}
+
+function toggleDropdown() {
+    const dropdownContent = document.getElementById('dropdownContent');
+    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
 }
