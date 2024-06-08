@@ -17,7 +17,6 @@ button.filter-button {
     height: 60px;
     background-color: #cab86f;
     color: white;
-    margin-right: -1px; /* To overlap slightly with the input */
 }
 
 button.filter-button img {
@@ -35,7 +34,7 @@ button.search-button {
     height: 60px;
     background-color: #cab86f;
     color: white;
-    border-radius: 0 5px 5px 0; /* Right rounded corners */
+    margin-top: 60px; /* Space below search button */
 }
 
 button.search-button img {
@@ -43,32 +42,47 @@ button.search-button img {
     height: 100%;
 }
 
-/* Action Button */
-button.action-button {
-    padding: 10px 20px;
-    font-size: 20px;
+/* Erase Button */
+button.erase-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 60px;
+    height: 60px;
     background-color: #cab86f;
     color: white;
-    margin-top: 20px; /* To separate from the search group */
+    margin-top: 0px; /* Space below search button */
 }
 
-button.action-button:hover {
-    background-color: #b8955d;
+button.erase-button img {
+    width: auto;
+    height: 100%;
 }
 
-/* View Buttons */
+/* Button Container */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* View Buttons Container */
 .view-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: -60px;
+    width: auto; /* Adjust to fit the buttons */
 }
 
+/* Individual View Buttons */
 button.view-button {
-    padding: 10px 20px;
-    font-size: 20px;
+    padding: 15px 15px;
+    font-size: 25px;
     background-color: #cab86f;
     color: white;
-    margin: 0 10px;
+    border-radius: 5px;
+    margin: 5px; /* Space between buttons */
 }
 
 button.view-button.active {
@@ -122,4 +136,71 @@ button.view-button:hover {
 
 .scroll-icon span {
     font-size: 24px;
+}
+
+.search-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 20px; /* Increased from 16px to 18px */
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: #2E4053;
+    color: #FFEEAA;
+    border-left: none; /* No left border to blend with the filter button */
+    border-right: none; /* No right border to blend with the search button */
+    height: 35px; /* Match height of buttons */
+}
+
+/* View Buttons Container */
+.view-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: -65px;
+    width: auto; /* Adjust to fit the buttons */
+}
+
+/* Individual View Buttons */
+button.view-button {
+    padding: 15px 15px;
+    font-size: 28px;
+    background-color: #cab86f;
+    color: white;
+    border-radius: 5px;
+    margin: 10px; /* Space between buttons */
+}
+
+button.view-button.active {
+    background-color: #b8955d;
+}
+
+button.view-button:hover {
+    background-color: #b8955d;
+}
+
+/* Filter Tags */
+.selected-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensure proper vertical alignment */
+    font-size: 25px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.selected-filters span {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #cab86f;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Dancing Script', cursive;
 }

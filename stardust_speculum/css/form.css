@@ -1,18 +1,54 @@
 .search-group {
     display: flex;
-    width: 100%;
+    align-items: center;
     justify-content: center;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 input[type="text"] {
     flex: 1;
     padding: 10px;
-    font-size: 18px; /* Increased from 16px to 18px */
+    font-size: 20px; /* Increased from 16px to 18px */
     border: 1px solid #ccc;
-    border-radius: 0;
     text-align: center;
     background-color: #2E4053;
     color: #FFEEAA;
+    border-left: none; /* No left border to blend with the filter button */
     border-right: none; /* No right border to blend with the search button */
+    height: 35px; /* Match height of buttons */
+}
+
+/* View Buttons Container */
+.view-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: -80px;
+    width: auto; /* Adjust to fit the buttons */
+}
+
+/* Individual View Buttons */
+button.view-button {
+    padding: 15px 15px;
+    font-size: 28px;
+    background-color: #cab86f;
+    color: white;
+    border-radius: 5px;
+    margin: 10px; /* Space between buttons */
+}
+
+button.view-button.active {
+    background-color: #b8955d;
+}
+
+button.view-button:hover {
+    background-color: #b8955d;
+}
+
+/* Filter Tags */
+.selected-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }

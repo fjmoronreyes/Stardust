@@ -26,18 +26,20 @@
                 </div>
             </div>
             <input type="text" id="searchInput" placeholder="Buscar...">
-            <button class="search-button" onclick="searchBooks()">
-                <img src="./images/star_nobg.png" alt="Buscar" style="height: 60px;">
-            </button>
-        </div>
-        <div id="selectedFilters" class="selected-filters"></div>
-        <div class="button-group">
-            <button class="action-button" onclick="resetFilters()">Limpiar Búsqueda</button>
+            <div class="button-container">
+                <button class="search-button" onclick="searchBooks()">
+                    <img src="./images/star_nobg.png" alt="Buscar" style="height: 60px;">
+                </button>
+                <button class="erase-button" onclick="resetFilters()">
+                    <img src="./images/eraser_nogb.png" alt="Limpiar Búsqueda" style="height: 60px;">
+                </button>
+            </div>
         </div>
         <div class="view-buttons">
-            <button class="view-button" id="simple-view" onclick="setViewMode('simple')">Información Simple</button>
-            <button class="view-button" id="complete-view" onclick="setViewMode('complete')">Información Completa</button>
+            <button class="view-button" id="simple-view" onclick="setViewMode('simple')">Simple</button>
+            <button class="view-button" id="complete-view" onclick="setViewMode('complete')">Completa</button>
         </div>
+        <div id="selectedFilters" class="selected-filters"></div>
         <div id="results" class="results"></div>
     </div>
     <button id="scrollToTopBtn" onclick="scrollToTop()">
