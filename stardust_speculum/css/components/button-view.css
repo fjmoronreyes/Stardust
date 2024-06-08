@@ -1,0 +1,17 @@
+/* Individual View Buttons */
+button.view-button {
+    padding: 15px 15px;
+    font-size: 25px;
+    background-color: #cab86f;
+    color: white;
+    border-radius: 5px;
+    margin: 20px; /* Space between buttons */
+}
+
+button.view-button.active {
+    background-color: #b8955d;
+}
+
+button.view-button:hover {
+    background-color: #b8955d;
+}

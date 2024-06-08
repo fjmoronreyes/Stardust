@@ -1,0 +1,16 @@
+/* Filter Tags */
+.filter-tag {
+    display: inline-block;
+    background-color: #cab86f;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.filter-tag span {
+    margin-left: 5px;
+    cursor: pointer;
+    color: white;
+}
