@@ -9,12 +9,12 @@
 input[type="text"] {
     flex: 1;
     padding: 10px;
-    font-size: 20px; /* Increased from 16px to 18px */
+    font-size: 20px;
     border: 1px solid #ccc;
     text-align: center;
     background-color: #2E4053;
     color: #FFEEAA;
-    border-left: none; /* No left border to blend with the filter button */
-    border-right: none; /* No right border to blend with the search button */
-    height: 35px; /* Match height of buttons */
+    border-left: none;
+    border-right: none;
+    height: 35px;
 }
