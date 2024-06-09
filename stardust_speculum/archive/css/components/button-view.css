@@ -2,8 +2,8 @@
 button.view-button {
     padding: 15px 15px;
     font-size: 25px;
-    background-color: #cab86f;
-    color: white;
+    background-color: #FFEEAA;
+    color: rgb(0, 0, 0);
     border-radius: 5px;
     margin: 20px; /* Space between buttons */
 }

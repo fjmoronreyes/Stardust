@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #1B263B;
@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #1B263B;
+    background-color: #001234;
     color: #FFEEAA;
     padding: 20px;
     text-align: center;
@@ -16,17 +16,20 @@ header {
 
 header h1 {
     margin: 0;
-    font-family: 'Dancing Script', cursive;
     font-size: 2.5em;
+    color: #ffeeaa;
 }
 
 nav {
-    background-color: #cab86f;
-    padding: 10px 0;
+    background-color: #ffeeaa;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
@@ -39,17 +42,13 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
-    font-size: 1.2em;
+    color: rgb(0, 0, 0); /* Set navigation text to white */
+    font-weight: bold;
+    font-size: 2em; /* Ensure consistent size */
 }
 
 nav ul li a:hover {
-    color: #b8955d;
-}
-
-main {
-    padding: 20px;
-    text-align: center;
+    color: #ffeeaa;
 }
 
 footer {

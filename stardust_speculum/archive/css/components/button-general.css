@@ -1,6 +1,6 @@
 /* General Button Styles */
 button {
-    font-family: 'Dancing Script', cursive;
+    font-family: Arial, sans-serif;
     cursor: pointer;
     border: none;
     border-radius: 5px;
