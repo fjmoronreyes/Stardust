@@ -4,7 +4,7 @@ import time
 import os
 
 project_path = os.path.dirname(os.path.abspath(__file__))
-index_path = os.path.join(project_path, "stardust_speculum", "index.html")
+index_path = os.path.join(project_path, "stardust_speculum", "menu", "index.html")
 
 def start_server():
     subprocess.Popen(["uvicorn", "stardust_biblos.src.main:app", "--reload"])
