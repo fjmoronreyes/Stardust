@@ -1,0 +1,17 @@
+/* Search Button */
+button.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    background-color: #FFEEAA;
+    color: white;
+    margin-top: 60px;
+}
+
+button.search-button img {
+    width: auto;
+    height: 100%;
+}

@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import './components/button-general.css';
+@import './components/button-filter.css';
+@import './components/button-search.css';
+@import './components/button-erase.css';
+@import './components/button-view.css';
+@import './components/button-container.css';
+@import './components/filter-tag.css';
+@import './components/scroll-to-top.css';
+@import './components/search-group.css';
+@import './components/selected-filters.css';

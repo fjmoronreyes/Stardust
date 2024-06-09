@@ -1,0 +1,27 @@
+/* Scroll to Top Button */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #cab86f;
+    color: #1B263B;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #b8955d;
+}
+
+.scroll-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-icon span {
+    font-size: 24px;
+}

@@ -1,0 +1,20 @@
+.search-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: #2E4053;
+    color: #FFEEAA;
+    border-left: none;
+    border-right: none;
+    height: 35px;
+}
