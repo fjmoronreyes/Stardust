@@ -19,10 +19,11 @@
         </ul>
     </nav>
     <main>
-        <h2>Lista de Libros</h2>
-        <ul id="book-list">
-            <!-- The book list will be populated by JavaScript -->
-        </ul>
+        <div id="book-list"></div>
+        <div id="pagination-controls">
+            <button id="prev-button" onclick="prevPage()">Anterior</button>
+            <button id="next-button" onclick="nextPage()">Siguiente</button>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 Stardust System. All rights reserved.</p>
