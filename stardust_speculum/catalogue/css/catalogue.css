@@ -1,3 +1,5 @@
+/* catalogue.css */
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -8,7 +10,7 @@ body {
 }
 
 header {
-    background-color: #2E4053;
+    background-color: #001234;
     color: #FFEEAA;
     padding: 20px;
     text-align: center;
@@ -50,6 +52,65 @@ nav ul li a:hover {
 main {
     padding: 20px;
     text-align: center;
+}
+
+#book-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.book-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    cursor: pointer;
+    text-align: left;
+}
+
+.book-item h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.book-item p {
+    margin: 5px 0;
+}
+
+.book-details {
+    display: none;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#pagination-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#pagination-controls button {
+    background-color: #cab86f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+#pagination-controls button:hover {
+    background-color: #b8955d;
+}
+
+#pagination-controls button:disabled {
+    background-color: #7a7a7a;
+    cursor: not-allowed;
 }
 
 footer {
